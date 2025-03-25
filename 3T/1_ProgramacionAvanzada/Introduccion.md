@@ -5,7 +5,7 @@ Este bloque de programación avanzada incluye:
 - Depuración y pruebas (tema 15)
 - Estructuras de datos (tema 16)
 
-<br><br><br>
+<br>
 
 ### Tema 13: Excepciones en Java
 
@@ -17,8 +17,6 @@ Durante la ejecución de un programa pueden ocurrir errores inesperados: divisi�
 - Los `if` mezclan la lógica del programa con la gestión de errores, haciendo el código menos legible.
 
 Con las **excepciones**, el tratamiento de errores se gestiona mediante una estructura independiente (`try-catch`), lo que permite **separar claramente la lógica principal del programa del código que maneja los errores**.
-
-<br>
 
 #### Manejo de excepciones: `try-catch-finally`
 
@@ -34,8 +32,6 @@ try {
 
 El bloque `try` contiene la lógica principal. Si ocurre una excepción, el flujo se desvía al `catch`, donde se trata el error. El bloque `finally` se ejecuta siempre, tanto si ha ocurrido la excepción como si no (por ejemplo, para cerrar archivos o liberar recursos).
 
-<br>
-
 #### Lanzar excepciones manualmente con `throw`
 
 A veces queremos propagar el error en lugar de manejarlo directamente, especialmente si la decisión de qué hacer corresponde a un nivel superior de la aplicación. En ese caso, usamos `throw` para lanzar la excepción:
@@ -48,15 +44,12 @@ public void dividir(int a, int b) throws ArithmeticException {
     System.out.println(a / b);
 }
 ```
-<br>
 
 #### Cuándo usar `try-catch` y cuándo usar `throw`
 
 - **`try-catch`**: Se utiliza cuando podemos **gestionar la excepción localmente**, es decir, tenemos una solución o mensaje para el error en ese punto del programa. Ej: volver a pedir datos al usuario, registrar un error, usar un valor alternativo.
 
 - **`throw`**: Se utiliza cuando **no podemos resolver el problema localmente**, y es mejor que lo gestione otro nivel del programa (por ejemplo, otra clase que llamó al método que da el error). Se lanza una excepción para que el error se propague.
-
-<br>
 
 #### Principales tipos de excepciones en Java
 - `ArithmeticException`: Errores aritméticos, como división por cero.
@@ -65,8 +58,6 @@ public void dividir(int a, int b) throws ArithmeticException {
 - `IllegalArgumentException`: Argumento inválido pasado a un método.
 - `IOException`: Problemas de entrada/salida (archivos).
 - `FileNotFoundException`: Archivo no encontrado.
-
-<br>
 
 #### Excepciones personalizadas: ¿cuándo crearlas?
 Aunque lo más habitual es usar las excepciones de Java, podemos crear nuestras propias excepciones cuando:
@@ -83,20 +74,16 @@ public class EdadInvalidaException extends Exception {
 ```
 
 ---
-<br><br><br>
+<br>
 
 ### Tema 15: Depuración de Programas
 
 #### ¿Qué es depurar un programa?
 **Depurar** es el proceso de ejecutar el programa paso a paso para **detectar y corregir errores lógicos o de flujo**. No se trata de errores de compilación, sino de aquellos casos en que el programa compila pero **no se comporta como se espera**.
 
-<br>
-
 #### Herramientas para depurar
 - Depurador (Debugger) del IDE (NetBeans, Eclipse, IntelliJ).
 - Consola de salida (`System.out.println` en casos simples).
-
-<br>
 
 #### Seguimiento de variables
 Permite ver el **valor actual de cada variable** durante la ejecución. Es muy útil para detectar:
@@ -104,22 +91,17 @@ Permite ver el **valor actual de cada variable** durante la ejecución. Es muy �
 - Variables que cambian cuando no deberían.
 - Comparaciones que fallan por detalles sutiles (como mayúsculas/minúsculas).
 
-<br>
-
 #### Análisis del flujo de ejecución
 Permite comprobar **qué caminos del código se están ejecutando realmente**:
 - ¿Se entra en el `if` que debería?
 - ¿Cuántas veces se ejecuta un bucle?
 - ¿Se salta algún bloque inesperadamente?
 
-<br>
-
 #### Puntos de ruptura (Breakpoints)
 Un **punto de ruptura** es una marca que se coloca en una línea de código para detener la ejecución en ese punto y comenzar la inspección paso a paso.
-<br>
 
 ---
-<br><br><br>
+<br>
 
 ### Tema 16: Introducción a las Estructuras de Datos
 
@@ -131,7 +113,6 @@ Una estructura de datos es una forma de **organizar y almacenar datos** de maner
 - Tamaño dinámico (no hay que definirlo al inicio).
 - Mayor flexibilidad para tipos complejos.
 - Operaciones integradas como búsqueda, ordenación o eliminación.
-<br>
 
 #### Clasificación de las estructuras de datos en Java
 
@@ -141,8 +122,6 @@ Una estructura de datos es una forma de **organizar y almacenar datos** de maner
 | **Conjuntos** `Set` | No permiten duplicados. Muy eficientes para comprobar existencia de elementos. Ej: `HashSet`, `TreeSet`. Ideal para listas de elementos únicos. |
 | **Colas** `Queue`  | Acceden a los elementos en orden de llegada (FIFO). Se usan para tareas por turnos, colas de procesos, etc. Ej: `LinkedList`, `PriorityQueue`. |
 | **Mapas** `Map`    | Almacenan pares clave-valor. Las claves son únicas. Muy útiles para relacionar datos (por ejemplo, DNI - Persona). Ej: `HashMap`, `TreeMap`. |
-
-<br>
 
 #### Profundización: `ArrayList` y `HashMap`
 
@@ -165,7 +144,6 @@ System.out.println(nombres.get(0)); // Ana
 - Listados ordenados de cualquier tipo de dato.
 - Especialmente si necesitamos recorrer elementos en orden o acceder por índice.
 - Ejemplos de uso: listas de la compra, notas de exámenes, listas de tareas, etc.
-<br>
 
 ##### `HashMap`
 Estructura que guarda los datos en pares de datos clave-valor (es decir, por parejas de datos, no de uno en uno). Las claves (primer dato) son únicas y no pueden repetirse. Los elementos aquí no están ordenados (no tienen índice):
@@ -185,7 +163,6 @@ System.out.println(edades.get("Ana")); // 20
 **Ideal para:**
 - Asociar valores a claves y hacer búsquedas rápidas por identificador.
 - Ejemplos de uso: agenda de contactos (nombre-teléfono), usuarios y contraseñas, inventario en una tienda (producto-cantidad), diccionario (palabra en español - palabra en inglés), etc.
-<br>
 
 ##### Comparativa rápida
 
