@@ -1,9 +1,11 @@
 # Programacion avanzada: Excepciones, Depuración y Estructuras de Datos
 
 Este bloque de programación avanzada incluye:
-- Estructuras de datos (tema 16)
-- Depuración y pruebas (tema 15)
 - Excepciones (tema 13)
+- Depuración y pruebas (tema 15)
+- Estructuras de datos (tema 16)
+
+<br><br><br>
 
 ## Tema 13: Excepciones en Java
 
@@ -72,6 +74,7 @@ public class EdadInvalidaException extends Exception {
 ```
 
 ---
+<br><br><br>
 
 ## Tema 15: Depuración de Programas
 
@@ -98,6 +101,7 @@ Permite comprobar **qué caminos del código se están ejecutando realmente**:
 Un **punto de ruptura** es una marca que se coloca en una línea de código para detener la ejecución en ese punto y comenzar la inspección paso a paso.
 
 ---
+<br><br><br>
 
 ## Tema 16: Introducción a las Estructuras de Datos
 
